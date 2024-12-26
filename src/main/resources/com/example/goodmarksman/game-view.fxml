@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="283.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.goodmarksman.Client.MainController">
+   <FlowPane prefHeight="570.0" prefWidth="537.0">
+      <children>
+         <FlowPane prefHeight="0.0" prefWidth="390.0" style="-fx-border-color: black;">
+            <children>
+               <Pane fx:id="gameView" onMouseClicked="#mouseOnClicked" prefHeight="240.0" prefWidth="390.0" style="-fx-background-color: gold;">
+                  <children>
+                     <Line endX="7.399993896484375" endY="121.00001525878906" layoutX="285.0" layoutY="119.0" startX="7.399993896484375" startY="-119.00000762939453" />
+                     <Line endX="100.0" endY="109.0" layoutX="250.0" layoutY="130.0" startX="100.0" startY="-131.0" />
+<!--                     <Circle fx:id="smallTarget" fill="#ff2121" layoutX="350.0" layoutY="120.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />-->
+<!--                     <Circle fx:id="bigTarget" fill="#21d4ff" layoutX="292.0" layoutY="120.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />-->
+                     <Rectangle fill="#e7ff1f" height="240.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                     <Polygon fx:id="arrow" fill="DODGERBLUE" layoutX="38.0" layoutY="122.0" points="-30.0, 5.0, 0.0, 0.0, -30.0, -5.0" stroke="BLACK" strokeType="INSIDE" />
+                  </children>
+               </Pane>
+               <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="44.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: #CDCDCD;">
+                  <children>
+                     <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClick" text="Start">
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor></Button>
+                     <Button mnemonicParsing="false" onAction="#onPauseButtonClick" text="Pause">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                     </Button>
+                     <Button fx:id="shotButton" minWidth="58.0" mnemonicParsing="false" onAction="#onShotButtonClick" prefHeight="26.0" text="Shot">
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor></Button>
+                     <Button mnemonicParsing="false" onAction="#onScoreBordButtonClick" text="Score Bord">
+                        <HBox.margin>
+                           <Insets left="65.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="stopButton" mnemonicParsing="false" onAction="#onStopButtonClick" text="Stop">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor></Button>
+                  </children>
+                  <padding>
+                     <Insets left="10.0" />
+                  </padding>
+               </HBox>
+            </children>
+         </FlowPane>
+         <VBox fx:id="scoreBord" prefHeight="286.0" prefWidth="127.0" style="-fx-border-color: black; -fx-background-color: gold;">
+            <children>
+               <VBox prefWidth="100.0">
+                  <children>
+                     <HBox fx:id="name_block_1" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="5.0">
+                        <children>
+                           <Circle fill="WHITE" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                              <HBox.margin>
+                                 <Insets top="3.0" />
+                              </HBox.margin></Circle>
+                           <Label>
+                              <HBox.margin>
+                                 <Insets top="5.0" />
+                              </HBox.margin>
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font></Label>
+                        </children>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding></HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Счет игрока:">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="score_1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" top="2.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="5.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Выстрелов:">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="shots_1" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" top="2.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+               <VBox prefWidth="100.0">
+                  <children>
+                     <HBox fx:id="name_block_2" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="5.0">
+                        <children>
+                           <Circle fill="WHITE" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                              <HBox.margin>
+                                 <Insets top="3.0" />
+                              </HBox.margin></Circle>
+                           <Label>
+                              <HBox.margin>
+                                 <Insets top="5.0" />
+                              </HBox.margin></Label>
+                        </children>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin></HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Счет игрока:">
+                              <HBox.margin>
+                                 <Insets />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="score_2" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="5.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Выстрелов:">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="shots_2" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                     </HBox>
+                  </children>
+                  <VBox.margin>
+                     <Insets top="7.0" />
+                  </VBox.margin>
+               </VBox>
+               <VBox prefWidth="100.0">
+                  <children>
+                     <HBox fx:id="name_block_3" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="5.0">
+                        <children>
+                           <Circle fill="WHITE" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                              <HBox.margin>
+                                 <Insets top="3.0" />
+                              </HBox.margin></Circle>
+                           <Label>
+                              <HBox.margin>
+                                 <Insets top="5.0" />
+                              </HBox.margin></Label>
+                        </children>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding></HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Счет игрока:">
+                              <HBox.margin>
+                                 <Insets />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="score_3" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="5.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Выстрелов:">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="shots_3" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                     </HBox>
+                  </children>
+                  <VBox.margin>
+                     <Insets top="7.0" />
+                  </VBox.margin>
+               </VBox>
+               <VBox prefWidth="100.0">
+                  <children>
+                     <HBox fx:id="name_block_4" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="200.0" spacing="5.0">
+                        <children>
+                           <Circle fill="WHITE" radius="5.0" stroke="BLACK" strokeType="INSIDE">
+                              <HBox.margin>
+                                 <Insets top="3.0" />
+                              </HBox.margin></Circle>
+                           <Label>
+                              <HBox.margin>
+                                 <Insets top="5.0" />
+                              </HBox.margin></Label>
+                        </children>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding></HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Счет игрока:">
+                              <HBox.margin>
+                                 <Insets />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="score_4" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                        <VBox.margin>
+                           <Insets left="5.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox prefHeight="20.0" prefWidth="126.0">
+                        <children>
+                           <Label text="Выстрелов:">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Label>
+                           <Text fx:id="shots_4" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Text>
+                        </children>
+                     </HBox>
+                  </children>
+                  <VBox.margin>
+                     <Insets top="7.0" />
+                  </VBox.margin>
+               </VBox>
+            </children>
+            <FlowPane.margin>
+               <Insets />
+            </FlowPane.margin>
+         </VBox>
+      </children>
+   </FlowPane>
+</VBox>

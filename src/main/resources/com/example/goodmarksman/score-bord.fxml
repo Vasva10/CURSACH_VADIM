@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane prefHeight="400.0" prefWidth="250.0">
+        <TableView fx:id="tableView" prefHeight="400.0" prefWidth="234.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="22.399995386600494" text="id" />
+                <TableColumn fx:id="playerNameColumn" prefWidth="98.40001678466797" text="Player Name" />
+                <TableColumn fx:id="hitsColumn" prefWidth="55" text="Hits" />
+                <TableColumn fx:id="shotsColumn" prefWidth="55" text="Shots" />
+            </columns>
+        </TableView>
+      </ScrollPane>
+   </children>
+</VBox>
